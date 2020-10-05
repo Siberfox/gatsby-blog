@@ -10,8 +10,10 @@ const BlogLink = styled(Link)`
 `
 
 const BlogTitle = styled.h3`
-  margin-bottom: 20px;
-  color: blue;
+  color: #9e0d0d;
+`
+const Article = styled.div`
+  margin-bottom: 50px;
 `
 
 export default ({ data }) => {
@@ -19,18 +21,22 @@ export default ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div>
-        <h1>Andrey Thoughts</h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
+          <Article key={node.id}>
             <BlogLink to={node.fields.slug}>
-              <span>
-                {node.frontmatter.title} - {node.frontmatter.date}
-              </span>
+              <BlogTitle>
+                <span>{node.frontmatter.title}</span>
+              </BlogTitle>
             </BlogLink>
-
+            <h5>
+              {new Date(node.frontmatter.date).toLocaleString("en-En", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </h5>
             <p>{node.excerpt}</p>
-          </div>
+          </Article>
         ))}
       </div>
     </Layout>

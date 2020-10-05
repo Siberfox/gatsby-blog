@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 1100,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
@@ -37,8 +37,17 @@ const Layout = ({ children }) => {
         <footer
           style={{
             marginTop: `2rem`,
+            paddingTop: `1rem`,
+            position: "fixed",
+            bottom: "20px",
           }}
-        ></footer>
+        >
+          <Link to="https://github.com/Siberfox">Github</Link>
+          <span> • </span>
+          <Link to="https://www.linkedin.com/in/andrey-ivanov55/">
+            Linkedin
+          </Link>
+        </footer>
       </div>
     </>
   )
