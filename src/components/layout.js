@@ -38,8 +38,11 @@ const Layout = ({ children }) => {
           style={{
             marginTop: `2rem`,
             paddingTop: `1rem`,
+            paddingBottom: "10px",
             position: "fixed",
-            bottom: "20px",
+            bottom: "0",
+            width: "100vw",
+            backgroundColor: "#dfeff3",
           }}
         >
           <Link to="https://github.com/Siberfox">Github</Link>
@@ -47,6 +50,8 @@ const Layout = ({ children }) => {
           <Link to="https://www.linkedin.com/in/andrey-ivanov55/">
             Linkedin
           </Link>
+          <br />
+          <sub>2020 Andrey Ivanov</sub>
         </footer>
       </div>
     </>
